@@ -7,8 +7,6 @@ import 'package:curso_flutterando/curso/aulas_iniciais.dart';
 //Método principal - onde o flutter é executado na inicialização
 void main() {
   runApp(
-    const AulaInicial(
-      title: 'Curso Flutterando',
-    ),
+    const AulaInicial(),
   );
 }
