@@ -21,7 +21,11 @@ class _AulaSobreEstadoState extends State<AulaSobreEstado> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Text('contador: $_count'),
+      // usamos o simbolo do $ para concatenar variaveis no texto
+      child: Text(
+        'contador: $_count',
+        style: const TextStyle(color: Colors.blue, fontSize: 20),
+      ),
       onTap: () {
         // usamos o setState para notificarmos o build de que houve uma
         // alteração no estado e precisamos que a tela seja modificada
