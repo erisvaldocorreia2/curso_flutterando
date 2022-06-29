@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:curso_flutterando/curso/aula_sobre_estado.dart';
 
 class AulaInicial extends StatelessWidget {
   // Construtor: Recebe os parametros usados na tela.
   // Caso um parametro não tenha um valor default, ele se torna obrigatorio
   // Parametros obrigatórios necessitam da chave 'required'
   const AulaInicial({Key? key, required this.title}) : super(key: key);
-
   // Parametro criado para receber um valor na tela
   // Todo parametro precisa ser incluido no construtor.
   final String title;
@@ -21,12 +21,18 @@ class AulaInicial extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // ignore: avoid_unnecessary_containers
       home: Container(
-        child: Center(
-          child: Text(
-            // usando o parametro recebido na classe no momento de instancia
-            title,
-            style: const TextStyle(color: Colors.white, fontSize: 25),
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              // usando o parametro recebido na classe no momento de instancia
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 25),
+            ),
+
+            // Instanciando a Classe com estado e passando o parametro
+            const AulaSobreEstado()
+          ],
         ),
       ),
     );
