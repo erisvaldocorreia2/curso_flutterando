@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curso_flutterando/curso/aula_controller.dart';
+import 'package:curso_flutterando/curso/widget_reaproveitado.dart';
 
 class AulaSobreEstado extends StatefulWidget {
   // Caso um parametro não tenha um valor default, ele se torna obrigatorio
@@ -37,6 +38,9 @@ class _AulaSobreEstadoState extends State<AulaSobreEstado> {
         title: const Text('Curso Fluterando'),
       ),
       body: Center(
+        // Column permite que eu adicione diversos widgets um seguida do outro
+        // de forma vertical na renderização do app.
+        // importante lembrar que a ordem disposta interfere na renderização
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -48,6 +52,7 @@ class _AulaSobreEstadoState extends State<AulaSobreEstado> {
               widget.title,
               style: const TextStyle(color: Colors.red, fontSize: 25),
             ),
+            // GestureDetector pode ser usado para capturar toques na tela.
             GestureDetector(
               // usamos o simbolo do $ para concatenar variaveis no texto
               child: Text(
@@ -63,6 +68,25 @@ class _AulaSobreEstadoState extends State<AulaSobreEstado> {
                   _count++;
                 });
               },
+            ),
+            // SizedBox é um widget muito usado para criarmos espaços
+            const SizedBox(
+              height: 50,
+            ),
+            // A Row é usada para criarmos uma sequencia de widgets em linha
+            // assim como a column, ela recebe um array de filhos e a ordem
+            // gerencia a posição que cada widget é renderizado.
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: const [
+                // Pensando no reaproveitamento de código podemos
+                // criar widgets personalizados que recebem parametros
+                // e podem ser componentizados de forma a ficar mais organizado
+                // o nosso código
+                WidgetReaproveitado(cor: Colors.red, texto: 'olá 1'),
+                WidgetReaproveitado(cor: Colors.black, texto: 'olá 2'),
+                WidgetReaproveitado(cor: Colors.green, texto: 'olá 3'),
+              ],
             ),
           ],
         ),
