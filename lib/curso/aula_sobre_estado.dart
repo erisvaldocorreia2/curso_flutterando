@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:curso_flutterando/curso/aula_controller.dart';
 
 class AulaSobreEstado extends StatefulWidget {
   // Caso um parametro não tenha um valor default, ele se torna obrigatorio
@@ -67,8 +68,13 @@ class _AulaSobreEstadoState extends State<AulaSobreEstado> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
+        child: const Icon(Icons.refresh),
+        onPressed: () {
+          // conforme o nosso controle possui um listener,
+          // não precisamos do uso do setState, pois o notifyListener avisa
+          // sobre as atualizações realizadas ao builder
+          AulaController.instance.changeTheme();
+        },
       ),
     );
   }
