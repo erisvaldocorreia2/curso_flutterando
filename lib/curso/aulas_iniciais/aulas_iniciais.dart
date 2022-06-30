@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:curso_flutterando/curso/aula_sobre_estado.dart';
-import 'package:curso_flutterando/curso/aula_controller.dart';
+
+import 'aula_controller.dart';
+import 'aula_sobre_estado.dart';
 
 class AulaInicial extends StatelessWidget {
   // Construtor: Recebe os parametros usados na tela.

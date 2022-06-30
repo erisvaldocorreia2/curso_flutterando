@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:curso_flutterando/curso/aula_controller.dart';
-import 'package:curso_flutterando/curso/widget_reaproveitado.dart';
+
+import 'aula_controller.dart';
+import 'widget_reaproveitado.dart';
 
 class AulaSobreEstado extends StatefulWidget {
   // Caso um parametro não tenha um valor default, ele se torna obrigatorio
