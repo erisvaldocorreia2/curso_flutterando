@@ -1,6 +1,8 @@
 # curso_flutterando
 
-A new Flutter project.
+Usando como base o conteúdo aplicado pela playlist do curso de flutter da flutterando [Playlist](https://www.youtube.com/playlist?list=PLlBnICoI-g-d-J57QIz6Tx5xtUDGQdBFB)
+
+Foram aplicados algumas alterações usando conteúdos extras a fim de organizar o contexto geral da estrutura.
 
 ## Getting Started
 
