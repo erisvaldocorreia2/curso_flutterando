@@ -1,5 +1,6 @@
-import 'package:curso_flutterando/curso/aula_formularios/home_page.dart';
 import 'package:flutter/material.dart';
+
+import './home_page.dart';
 
 // Spearando a classe do MaterailApp da classe de tela
 // usando principios de divisão de responsabilidade
@@ -8,7 +9,18 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: MyPage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
+      // usamos o initialRoute no lugar de home quando trambalhamos com rotas nomeadas
+      initialRoute: '/login',
+
+      // routes recebe um objeto mapeado de todas as rotas e seus devidos arquivos
+      routes: {
+        '/login': (context) => const MyPage(),
+        '/home': (context) => const HomePage(),
+      },
+    );
   }
 }
 
@@ -79,9 +91,14 @@ class _MyPageState extends State<MyPage> {
                         // Navigator permite gerarmos um controle de roteamento
                         // assim conseguimos trazer uma nova classe provendo
                         // navegacao entre telas.
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ));
+
+                        // para lidarmos com navegação de rotas nomeadas
+                        Navigator.of(context).pushNamed('/home');
+
+                        // Para lidarmos com navegação manual
+                        //Navigator.of(context).push(MaterialPageRoute(
+                        //builder: (context) => const HomePage(),
+                        //));
                       } else {
                         // ignore: avoid_print
                         print('Login Invalido');
