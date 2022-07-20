@@ -1,3 +1,4 @@
+import 'package:curso_flutterando/curso/aula_formularios/myToast.dart';
 import 'package:flutter/material.dart';
 
 // Tela simples criada para estudo do processo de navegação
@@ -14,6 +15,14 @@ class HomePage extends StatelessWidget {
       // num login efetivo, poderiamos usar o metodo pushReplacement que ao navegar
       // removeria a rota anterior da pilha, evitando a navegacao com rota de login
       appBar: AppBar(),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Receber Mensagem!'),
+          onPressed: () {
+            toast(context, 'Boas vindas a home page!');
+          },
+        ),
+      ),
     );
   }
 }
